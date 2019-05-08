@@ -25,9 +25,15 @@ div.calendar div {
   align-items: center;
   width: 100px;
   height: 100px;
-  border: 1px solid black;
   box-sizing: border-box;
   background: #eeeeee;
+}
+
+.calendar div:hover {
+  background-color: pink;
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+  transition: background-color 0.5s, transform 0.5s;
 }
 
 :before {
@@ -38,8 +44,14 @@ div.calendar div {
 @for $j from 1 through length($day) {
     @for $days from 28 through 31 {
       .calendar-#{nth($day, $j)}.calendar-#{$days} {
-        @for $i from index($day, nth($day, $j)) through $days {
-          :nth-child(#{$i - index($day, nth($day, $j)) + 1}):before {
+        :first-child {
+          grid-column-start: index($day, nth($day, $j));
+        }
+        @for $i from 1 through $days {
+          :nth-child(#{$i}) {
+            border: 1px solid black;            
+          }
+          :nth-child(#{$i}):before {
             content: $i + "";
         }
       }
