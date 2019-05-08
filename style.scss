@@ -26,13 +26,10 @@ div.calendar div {
   width: 100px;
   height: 100px;
   box-sizing: border-box;
-  background: #eeeeee;
 }
 
 .calendar div:hover {
-  background-color: pink;
   transform: scale(1.2, 1.2);
-  cursor: pointer;
   transition: background-color 0.5s, transform 0.5s;
 }
 
@@ -49,7 +46,12 @@ div.calendar div {
         }
         @for $i from 1 through $days {
           :nth-child(#{$i}) {
+            background: #eeeeee;
             border: 1px solid black;            
+          }
+          :nth-child(#{$i}):hover {
+            background-color: pink;
+            cursor: pointer;
           }
           :nth-child(#{$i}):before {
             content: $i + "";
