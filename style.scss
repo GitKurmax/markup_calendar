@@ -23,9 +23,9 @@ body {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  transition: .5s;
   &:hover {
-    transform: translateY(-10px);
-    transition: .5s;
+    transform: translateY(-20px);
   }
   &:before {
     font-family: "Arial", sans-serif;

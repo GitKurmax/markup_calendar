@@ -17,10 +17,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  transition: .5s; }
   .calendar div:hover {
-    transform: translateY(-10px);
-    transition: .5s; }
+    transform: translateY(-20px); }
   .calendar div:before {
     font-family: "Arial", sans-serif;
     font-size: 30px; }
